@@ -1,0 +1,42 @@
+<%- include('partials/header'); %>
+	<h1>My Home</h1>
+	<p><%= homeContent %></p>
+    <div class="posts">
+        <% if(postedList.length > 0) { %> 
+            <%  let BreakException = {}
+                const limit = 3; 
+                try { %>      
+                <% postedList.forEach((post, counter) => { %> 
+                    <%  const postContent = post.content.slice(0, 100); 
+                        const postTitle = post.title.charAt(0).toUpperCase() + post.title.slice(1);
+                    %>
+                    
+                    <% if(counter === limit) { %>
+                        <br /><h4>Read all the Blogs <a href="/posts">Posted here</a></h4>
+                    <%  throw BreakException;} %>
+        
+                    <h2><%= postTitle; %></h2>
+                    <p class="blog-post-meta">
+                        <span class="post-date"><%= moment(post.date).format('dddd MMMM Do, YYYY'); %></span> 
+                        by
+                        <span class="post-author"><%= post.author %></span>
+                    </p>
+
+                    <% if (post.content.length > 100) {%>
+                        <p><%= postContent; %>... <a href="/posts/<%= post.titleURI %>">Read more</a></p>
+                    <% } else { %>
+                        <p><%= postContent; %></p>
+                    <% } %>
+                    <hr/>
+               
+                <% counter++; }); %> 
+                <%
+                } catch(e) {
+                    if(e !== BreakException) throw e;
+                }
+                %> 
+        <% } else { %>
+            <h4>No Post Available <br /><br /><a href="/compose" class="btn btn-primary">Create Here</a></h4>
+        <% } %>
+    </div>
+<%- include("partials/footer");%>

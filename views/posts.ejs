@@ -1,0 +1,18 @@
+<%- include('partials/header');%>
+    <h1>Blog Posted</h1>
+    <ul class="list-group list-group-flush">
+        <% if(postedList.length > 0) { %>
+            <% postedList.forEach((post) => {  %>
+                <%  const postContent = post.content.slice(0, 100);
+                    const postTitle = post.title.charAt(0).toUpperCase() + post.title.slice(1);
+                %>
+                <li class="list-group-item"><a href="/posts/<%= post.titleURI %>"><h4><%=postTitle%></h4></a>
+                <p><%= postContent %> <br /><a href="/posts/<%= post.titleURI %>">Read more...</a></p>
+                </li>
+            <% }); %>
+        <% }else { %>
+            <li class="list-group-item">No Post Available <br /><a href="/compose">Create Here</a></li>
+        <% } %>
+
+      </ul>
+<%- include('partials/footer');%>

@@ -1,0 +1,82 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*** NAVBAR ***/
+p.navbar-brand {
+    color: #E45A2F !important;
+    font-weight: bold;
+}
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	letter-spacing: 5px;
+}
+.navbar-nav li a:hover {
+	color: #E45A2F !important;
+}
+
+/*** CONTAINER ***/
+.container.content-wrap {
+	min-height: 100vh;
+    margin-bottom:100px;
+    padding-bottom : 60px
+}
+.container-fluid {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+/*** POSTS ***/
+.posts {
+    margin-top: 30px;
+}
+.posts h2 {
+    color : #E45A2F
+}
+.posts h2:first-letter, .post h2:first:letter {
+    text-transform: capitalize;
+}
+p.blog-post-meta {
+    color : #000000;
+    font-size: 12px;
+}
+p span.post-date {
+    color: #727272;
+    font-style: italic;
+}
+p span.post-author {
+    color : #000000;
+    font-weight: bold;
+}
+/*** FOOTER ***/
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	text-align: center;
+	width: 100%;
+	background-color: #E45A2F;
+	padding: 25px 0;
+}
+.footer p,
+.footer p a {
+	font-size: 12px;
+	color: #fff;
+}
